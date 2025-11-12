@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <h1>Contatos</h1>
+    <ul>
+        {% for contato in contatos %}
+            <li> {{contato.nome}} - {{contato.telefone}}: <a href="/deletar/{{contato.id}}">Deletar</a></li> <!-- a tag ancora traça a rota de deletar no arquivo api.py e insere o id referente a cada dado iterado pelo loop através de "contato.id" --> <a href="/editar/{{contato.id}}">Editar</a> <!-- aqui é a mesma coisa -->
+        {% endfor %}
+    </ul>
+    <a href="/registrar_contato"> Registrar contato</a>
+    
+</body>
+</html>
